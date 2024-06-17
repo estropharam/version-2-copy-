@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Changer</title>
+</head>
+<body>
+    <!-- Image element whose source will be changed -->
+    <img id="main-image" src="img/default.jpg" alt="Main Image" width="500px">
+
+    <!-- Links to change the image -->
+    <a href="#" class="ban-image" data-image="img/image1.jpg">Change to Image 1</a>
+    <a href="#" class="ban-image" data-image="img/image2.jpg">Change to Image 2</a>
+    <a href="#" class="ban-image" data-image="img/image3.jpg">Change to Image 3</a>
+
+    <!-- Include your script at the end of the body -->
+    <script>
+        const links = document.querySelectorAll(".ban-image");
+        const mainImage = document.getElementById("main-image");
+
+        links.forEach(function(link) {
+            link.addEventListener("click", function(event) {
+                // Prevent the default action of the link
+                event.preventDefault();
+
+                // Get the new image URL from the data attribute
+                const newImageSrc = link.getAttribute("data-image");
+
+                // Update the src attribute of the main image
+                mainImage.src = newImageSrc;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Mission</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- ------------bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style>
+		.image-container {
+			width: 100%;
+			max-width: 100%;
+			height: 400px;
+			overflow: hidden;
+			position: relative;
+			padding: 0;
+		}
+
+		.image-container img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		.mis-open
+		{
+			background-color:rgba(255, 255, 255, 0.30);
+			left:2%;
+			border-radius: 10px;
+			text-align: left;
+			height:4em;
+			width: auto;
+			padding:auto;
+			z-index:200;
+		}	
+	</style>
+
+</head>
+
+<body>
+	<div class="spinner-wrapper">
+		<div class="spinner">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			</div>
+	</div>
+
+	<!-- header start -->
+	<header class="header">
+		<div class="container">
+			<div class="row v-center">
+				<div class="header-item item-left">
+					<div class="logo">
+						<a href="./index.html"><img id="logo1" src="./img/ESTRO.png" height="40px"></a>
+					</div>
+				</div>
+				<!-- menu start here -->
+				<div class="header-item item-center">
+					<div class="menu-overlay">
+					</div>
+					<nav class="menu">
+						<div class="mobile-menu-head">
+							<div class="go-back"><i class="fa fa-angle-left"></i></div>
+							<div class="current-menu-title"></div>
+							<div class="mobile-menu-close">&times;</div>
+						</div>
+						<ul class="menu-main">
+							<a style="text-decoration:none;color:black;font-weight: 500;" href="./index.html">Home</a>
+							</li>
+
+							<li class="menu-item-has-children">
+								<a href="#">Company <i class="fa fa-angle-down"></i></a>
+								<div class="sub-menu mega-menu mega-menu-column-4">
+									<div class="list-item">
+										<h4 class="title">About</h4>
+										<ul>
+											<li><a href="./mission.html">Misson</a></li>
+											<li><a href="./vision.html">Vision</a></li>
+											<li><a href="./corporate.html">Corporate</a></li>
+										</ul>
+										<h4 class="title">Careers</h4>
+										<ul>
+											<li><a href="#">Sales & Services</a></li>
+											<li><a href="#">Resources</a></li>
+											<li><a href="#">Data</a></li>
+										</ul>
+									</div>
+									<div class="list-item">
+										<h4 class="title">Awards</h4>
+										<ul>
+											<li><a href="#">Product List</a></li>
+											<li><a href="#">Product List</a></li>
+										</ul>
+										<h4 class="title">Collabs</h4>
+										<ul>
+											<li><a href="#">Product List</a></li>
+											<li><a href="#">Product List</a></li>
+										</ul>
+
+										<h4 class="title">Medicine</h4>
+										<ul>
+											<li><a href="./subpage/product.html">CNS</a></li>
+											<li><a href="./subpage/product.html">DIV</a></li>
+										</ul>
+									</div>
+									<div class="list-item">
+										<h4 class="title">Heritage</h4>
+										<ul>
+											<li><a href="./subpage/csr.html">Company</a></li>
+											<li><a href="./subpage/covid.html">CSR</a></li>
+										</ul>
+									</div>
+
+									<div class="list-item">
+										<img src="/img/top-view-hands-with-paper-cut-family.jpg">
+									</div>
+								</div>
+							</li>
+							<li class="menu-item-has-children">
+								<a href="#">Blog <i clas s="fas fa-angle-down"></i></a>
+								<div class="sub-menu single-column-menu">
+									<ul>
+										<li><a href="#">Standard Layout</a></li>
+										<li><a href="#">Grid Layout</a></li>
+										<li><a href="#">single Post Layout</a></li>
+									</ul>
+								</div>
+							</li>
+
+							<li>
+								<a href="#">Contact</a>
+							</li>
+							<li class="menu-item-has-children">
+								<a href="#">Pages <i class="fas fa-angle-down"></i></a>
+								<div class="sub-menu single-column-menu">
+									<ul>
+										<li><a href="#">Login</a></li>
+										<li><a href="#">Register</a></li>
+										<li><a href="#">Faq</a></li>
+										<li><a href="#"></a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="menu-item-has-children">
+								<!-- -------------------------------------MENU -->
+								<a href="#">Fatured <i class="fa fa-angle-down"></i></a>
+								<div class="sub-menu mega-menu mega-menu-column-4">
+									<div class="list-item text-center">
+										<a href="#">
+											<img src="img/medicine/NERVISTRONG-FORTE.JPG" alt="new Product">
+											<h5 style="font-size:3vh" class="title">Nervistrong Forte</h5>
+										</a>
+									</div>
+									<div class="list-item text-center">
+										<a href="#">
+											<img src="img/medicine/Estropam-Plus.JPG" alt="new Product">
+											<h5 style="font-size:3vh" class="title">Estropam Plus</h5>
+										</a>
+									</div>
+									<div class="list-item text-center">
+										<a href="#">
+											<img src="img/medicine/Espanto-DSR.JPG" alt="new Product">
+											<h5 style="font-size:3vh" class="title">Espanto-DSR</h5>
+										</a>
+									</div>
+									<div class="list-item text-center">
+										<a href="#">
+											<img src="img/medicine/Xontibac-C.JPG" alt="new Product">
+											<h5 style="font-size:3vh" class="title">Xontibac-C</h5>
+										</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<!-- menu end here -->
+				<div class="header-item item-right">
+					<a href="#"><i class="fas fa-search"></i></a>
+					<a href="#"><i class="far fa-heart"></i></a>
+					<a href="#"><i class="fas fa-shopping-cart"></i></a>
+					<!-- mobile menu trigger -->
+					<div class="mobile-menu-trigger">
+						<span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<body>
+		<div style="position: relative;" class="container-fluid">
+			<div class="row">
+				<div class="image-container">
+					<img src="./img/missions.jpg" alt="Descriptive text">
+				</div>
+			</div>
+			<div style="position:absolute;top:70%;right:2%;" class="container-fluid">
+				<div class="row ">
+					<!-- <div class="col-sm-2">.</div> -->
+					<div  class="mis-open col-4"><h2 style="margin-left:2%;padding: 16px;text-decoration: underline;">Mission</h2></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12  mt-3">
+					<h1 class="hide">Committed to advancing healthcare:</h1>
+					<h3>Providing effective solutions for a healthier world.</h3>
+					<p>ESTRO Pharmaceuticals has successfully integrated environmental responsibility with a mission
+						dedicated to improving human life globally. The organization's implementation of
+						state-of-the-art Effluent Treatment Plants and the creation of a sprawling green campus
+						showcases a dedication to reducing carbon 	footprint and promoting eco-friendly practices.
+						Moreover, the company's support for environmental organizations demonstrates its commitment to
+						contributing to a better world.</p>
+					<p>ESTRO's mission to promote humanity's pursuit of longer, healthier, and happier lives is
+						admirable. The company's focus on providing global accessibility to affordable healthcare
+						products and services, and the continuous innovation in medical advancements, highlights its
+						dedication to making a positive impact on the well-being of individuals worldwide.</p>
+				</div>
+			</div>
+		</div>
+					
+				
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-12 mb-2">
+									
+									<div class="mt-4 mb-4 row featurette">
+										<div class="col-md-7">
+											<h1 style="font-size: 2em;" class="hide featurette-heading fw-normal lh-1">
+												To innovate and deliver superior quality medications
+												<span class="text-body-secondary">: ensuring better health and well-being for all.</span>
+											</h1>
+											<p style="padding-top: 2em;" class="lead">
+												To enhance global health and well-being by delivering innovative, high-quality, and affordable medications, we are committed to pioneering medical advancements, ensuring rigorous quality control, and making healthcare accessible to all.
+											</p>
+										</div>
+										<div class="col-md-5">
+											<img style="border-radius: 7px;" src="./img/hand-with-pills-dark-environment.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" alt="Compliance" height="400">
+										</div>
+									</div>
+									<h3 style="font-size: 3em;">Committed to excellence in every molecule.</h3>
+					<p>ESTRO Pharmaceuticals' additional mission statements, such as providing unlimited opportunities
+						to women and bridging socio-economic gaps, demonstrate a commitment to equality and empowerment.
+						Overall, ESTRO's mission and initiatives reflect a proactive approach to finding solutions to
+						medical and healthcare challenges while promoting sustainability and equity.Certainly! It seems
+						like ESTRO Pharmaceuticals has a strong commitment to environmental responsibility and a broad
+						mission dedicated to improving human life globally. They hav e invested in state-of-the-art
+						Effluent Treatment Plants to manage waste generated during their processes, created a green
+						campus, and actively support various environmental organizations. Additionally, their mission
+						emphasizes a commitment to humanity's pursuit of longer, healthier, and happier lives, global
+						accessibility at affordable prices for healthcare products, innovation in medical products and
+						services, and gender equality and empowerment. Overall, ESTRO Pharmaceuticals is dedicated to
+						creating a better world by integrating environmental responsibility, accessibility, innovation,
+						and equality into their mission.Certainly! Let's elaborate on the various aspects of ESTRO
+						Pharmaceuticals' mission and commitment to environmental responsibility.</p>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+
+
+
+	<footer style="background-color: #008DDA;padding:0 10px;color: aliceblue;" class="py-5">
+		<div class="row">
+			<div class="col-6 col-md-2 mb-3">
+				<h5 style="font-weight: 400;">Info</h5>
+				<ul style="color: gainsboro;" class="nav flex-column">
+					<li class="nav-item mb-2"><a href="./index.html" class="nav-link p-0 text-muted">Home</a></li>
+					<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Services</a></li>
+					<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Careers</a></li>
+					<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Enquiry</a></li>
+					<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Products</a></li>
+				</ul>
+			</div>
+
+			<div class="col-6 col-md-2 mb-3">
+				<h5 style="font-weight: 400;">Resource centre</h5>
+				<ul style="color: gainsboro;" class="nav flex-column">
+					<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About Estro</a></li>
+					<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+					<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contact</a></li>
+					<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Corporate Enquiries</a></li>
+					<!-- <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li> -->
+				</ul>
+			</div>
+
+			<div class="col-6 col-md-2 mb-3">
+				<h5 style="font-weight: 400;">Policies</h5>
+				<ul style="color: gainsboro;" class="nav flex-column">
+					<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Term of Services</a></li>
+					<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Privacy Policy</a></li>
+					<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+					<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+					<!-- <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li> -->
+				</ul>
+			</div>
+
+			<div class="col-md-5 offset-md-1 mb-3">
+				<form>
+					<h5 style="font-weight: 600;">Subscribe to our newsletter</h5>
+					<p>Discover our latest innovations and exclusive offers in our monthly digest.</p>
+					<div class="d-flex flex-column flex-sm-row w-100 gap-2">
+						<label for="newsletter1" class="visually-hidden">Email address</label>
+						<input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+						<button class="btn btn-primary" type="button">Subscribe</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 ">
+			<p>© 2022 Company, Inc. All rights reserved.</p>
+			<ul class="list-unstyled d-flex">
+				<li class="ms-3"><a class="link-dark" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+							height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+							<path
+								d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+						</svg></a></li>
+				<li class="ms-3"><a class="link-dark" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+							height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+							<path
+								d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+						</svg></a></li>
+				<li class="ms-3"><a class="link-dark" href="https://www.facebook.com/Estropharma/"><svg
+							xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+							class="bi bi-facebook" viewBox="0 0 16 16">
+							<path
+								d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+						</svg></a></li>
+			</ul>
+		</div>
+	</footer>
+	<script src="js/script.js"></script>
+	<!-- -----------bootstrap -->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+		integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
