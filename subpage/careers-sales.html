@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Responsibility</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <style>
+        .image-container {
+            width: 100%;
+            max-width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            padding: 0;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mis-open {
+            background-color: #A7E6FF;
+            opacity: ;
+            left: 2%;
+            border-radius: 10px;
+            text-align: left;
+            height: 4em;
+            width: auto;
+            padding: auto;
+            /* z-index: 200; */
+            color: rgb(0, 0, 0);
+            -webkit-text-stroke: 0.20000px rgb(95, 95, 95);
+        }
+
+        .card {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            perspective: 1000px;
+            box-shadow: 0 0 0 5px #ffffff80;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card svg {
+            width: 48px;
+            fill: #333;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+        }
+
+        .card__content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #f2f2f2;
+            transform: rotateX(-90deg);
+            transform-origin: bottom;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card:hover .card__content {
+            transform: rotateX(0deg);
+        }
+
+        .card__title {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .card:hover svg {
+            scale: 0;
+        }
+
+        .card__description {
+            margin: 10px 0 0;
+            font-size: 14px;
+            color: #777;
+            line-height: 1.4;
+        }
+
+        .card-body {
+            color: white;
+            background-color: #008DDA;
+            /* color: #00224D; */
+        }
+
+        .carousel-indicators [data-bs-target] {
+            background-color: black;
+        }
+
+
+        body {
+            margin-top: 20px;
+        }
+
+        .p-15px {
+            padding: 15px;
+        }
+
+        .border-color-gray {
+            border-color: #f2f3fa;
+        }
+
+        .border-all-1 {
+            border: 1px solid;
+        }
+
+        .hover-top {
+            position: relative;
+            top: 0;
+        }
+
+        .m-15px-tb {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .overlay-link {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border: 0;
+        }
+
+        .border-radius-50 {
+            border-radius: 50%;
+        }
+
+        .icon-50 {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 21px;
+        }
+
+        .white-color {
+            color: #ffffff;
+        }
+
+        .theme-bg {
+            background-color: #0050d8;
+        }
+
+        .icon-50 i.number {
+            font-style: normal;
+        }
+
+        .icon-50 i {
+            line-height: 50px;
+        }
+
+        .p-20px-l {
+            padding-left: 20px;
+        }
+
+        .p-10px-lr {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .p-0px-tb {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .border-radius-15 {
+            border-radius: 15px;
+        }
+
+        .white-color {
+            color: #ffffff;
+        }
+
+        .theme2nd-bg {
+            background-color: #53d267;
+        }
+
+        .m-0px {
+            margin: 0px;
+        }
+
+        .font-small {
+            font-size: .75rem;
+            line-height: 1rem;
+        }
+
+        .green-bg-alt {
+            background-color: rgba(17, 226, 121, 0.1);
+        }
+
+        .green-bg {
+            background-color: #11e279;
+        }
+
+        .green-after:after {
+            background-color: #11e279;
+        }
+
+        .green-before:before {
+            background-color: #11e279;
+        }
+
+        .green-color-alt {
+            color: rgba(17, 226, 121, 0.65);
+        }
+
+        .green-color {
+            color: #11e279;
+        }
+
+        .blue-bg-alt {
+            background-color: rgba(21, 178, 236, 0.1);
+        }
+
+        .blue-bg {
+            background-color: #15b2ec;
+        }
+
+        .blue-after:after {
+            background-color: #15b2ec;
+        }
+
+        .blue-before:before {
+            background-color: #15b2ec;
+        }
+
+        .blue-color-alt {
+            color: rgba(21, 178, 236, 0.65);
+        }
+
+        .blue-color {
+            color: #15b2ec;
+        }
+
+        .pink-bg-alt {
+            background-color: rgba(241, 38, 153, 0.1);
+        }
+
+        .pink-bg {
+            background-color: #f12699;
+        }
+
+        .pink-after:after {
+            background-color: #f12699;
+        }
+
+        .pink-before:before {
+            background-color: #f12699;
+        }
+
+        .pink-color-alt {
+            color: rgba(241, 38, 153, 0.65);
+        }
+
+        .pink-color {
+            color: #f12699;
+        }
+
+        .body-bg-alt {
+            background-color: rgba(113, 128, 150, 0.1);
+        }
+
+        .body-bg {
+            background-color: #718096;
+        }
+
+        .body-after:after {
+            background-color: #718096;
+        }
+
+        .body-before:before {
+            background-color: #718096;
+        }
+
+        .body-color-alt {
+            color: rgba(113, 128, 150, 0.65);
+        }
+
+        .body-color {
+            color: #718096;
+        }
+
+        .white-color-light {
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .bg-transparent {
+            background-color: transparent;
+        }
+
+        .theme-g-bg {
+            background: linear-gradient(to right, #0050d8, #002a72);
+        }
+
+        .dark-g-bg {
+            background: linear-gradient(50deg, #273444 0, #272b44 100%);
+        }
+
+        .yellow-bg {
+            background-color: #ffbe3d;
+        }
+
+        .border-radius-50 {
+            border-radius: 50%;
+        }
+
+        .icon-50 {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 21px;
+        }
+
+        .box-shadow-only-hover:hover {
+            box-shadow: 0 1.5rem 4rem rgba(22, 28, 45, 0.1);
+        }
+
+        .border-color-gray {
+            border-color: #f2f3fa !important;
+        }
+
+        .border-all-1 {
+            border: 1px solid;
+        }
+
+        .titles {
+            width: 100%;
+            font-size: 1.5em;
+        }
+
+        input[type="file"]::file-selector-button {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+        <div class="spinner-wrapper">
+            <div class="spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <!-- header start -->
+        <header class="header">
+            <div class="container">
+                <div class="row v-center">
+                    <div class="header-item item-left">
+                        <div class="logo">
+                            <a href="../corporate.html"><img id="logo1" src="../img/ESTRO.png" height="40px"></a>
+                        </div>
+                    </div>
+                    <!-- menu start here -->
+                    <div class="header-item item-center">
+                        <div class="menu-overlay">
+                        </div>
+                        <nav class="menu">
+                            <div class="mobile-menu-head">
+                                <div class="go-back"><i class="fa fa-angle-left"></i></div>
+                                <div class="current-menu-title"></div>
+                                <div class="mobile-menu-close">&times;</div>
+                            </div>
+                            <ul class="menu-main">
+                                <a style="text-decoration:none;color:black;font-weight: 500;"
+                                    href="../corporate.html">Home</a>
+                                </li>
+
+                                <li class="menu-item-has-children">
+                                    <a href="#">Company <i class="fa fa-angle-down"></i></a>
+                                    <div class="sub-menu mega-menu mega-menu-column-4">
+                                        <div class="list-item">
+                                            <h4 class="title">About</h4>
+                                            <ul>
+                                                <li><a href="../mission.html">Misson</a></li>
+                                                <li><a href="../vision.html">Vision</a></li>
+                                                <li><a href="../corporate.html">Corporate</a></li>
+                                            </ul>
+                                            <h4 class="title">Careers</h4>
+                                            <ul>
+                                                <li><a href="#">Sales & Services</a></li>
+                                                <li><a href="#">Resources</a></li>
+                                                <li><a href="#">Data</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Awards</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                            <h4 class="title">Collabs</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+
+                                            <h4 class="title">Medicine</h4>
+                                            <ul>
+                                                <li><a href="#">CNS</a></li>
+                                                <li><a href="#">DIV</a></li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Heritage</h4>
+                                            <ul>
+                                                <li><a href="./subpage/csr.html">Company</a></li>
+                                                <li><a href="./subpage/covid.html">CSR</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="list-item">
+                                            <img src="../img/top-view-hands-with-paper-cut-family.jpg">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="#">Blog <i clas s="fas fa-angle-down"></i></a>
+                                    <div class="sub-menu single-column-menu">
+                                        <ul>
+                                            <li><a href="#">Standard Layout</a></li>
+                                            <li><a href="#">Grid Layout</a></li>
+                                            <li><a href="#">single Post Layout</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="#">Pages <i class="fas fa-angle-down"></i></a>
+                                    <div class="sub-menu single-column-menu">
+                                        <ul>
+                                            <li><a href="#">Login</a></li>
+                                            <li><a href="#">Register</a></li>
+                                            <li><a href="#">Faq</a></li>
+                                            <li><a href="#"></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <!-- -------------------------------------MENU -->
+                                    <a href="#">Fatured <i class="fa fa-angle-down"></i></a>
+                                    <div class="sub-menu mega-menu mega-menu-column-4">
+                                        <div class="list-item text-center">
+                                            <a href="#">
+                                                <img src="../img/medicine/NERVISTRONG-FORTE.JPG" alt="new Product">
+                                                <h5 style="font-size:3vh" class="title">Nervistrong Forte</h5>
+                                            </a>
+                                        </div>
+                                        <div class="list-item text-center">
+                                            <a href="#">
+                                                <img src="../img/medicine/Estropam-Plus.JPG" alt="new Product">
+                                                <h5 style="font-size:3vh" class="title">Estropam Plus</h5>
+                                            </a>
+                                        </div>
+                                        <div class="list-item text-center">
+                                            <a href="#">
+                                                <img src="../img/medicine/Espanto-DSR.JPG" alt="new Product">
+                                                <h5 style="font-size:3vh" class="title">Espanto-DSR</h5>
+                                            </a>
+                                        </div>
+                                        <div class="list-item text-center">
+                                            <a href="#">
+                                                <img src="../img/medicine/Xontibac-C.JPG" alt="new Product">
+                                                <h5 style="font-size:3vh" class="title">Xontibac-C</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- menu end here -->
+                    <div class="header-item item-right">
+                        <a href="#"><i class="fas fa-search"></i></a>
+                        <a href="#"><i class="far fa-heart"></i></a>
+                        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                        <!-- mobile menu trigger -->
+                        <div class="mobile-menu-trigger">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <body>
+            <div style="position: relative;" class="container-fluid">
+                <div class="row">
+                    <div class="image-container">
+                        <img src="../img/careers.jpg" alt="ESTRO Responsibility">
+                    </div>
+                </div>
+                <div style="position:absolute;top:70%;right:2%;" class="container-fluid">
+                    <div class="row ">
+                        <!-- <div class="col-sm-2">.</div> -->
+                        <div class="mis-open col-4">
+                            <h2 style="margin-left:2%;padding:16px;text-decoration: none;font: weight 600 ;">CAREERS</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12  mt-3 ml-3">
+                        <h1 style="font-size:3.5em;display: inline;" class="hide">Unlock Your Potential!</h1>
+
+                        <div style="padding-left: 15px;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section style="margin-top:4%;" class="section">
+                <div class="container">
+                    <div class="row md-m-25px-b m-45px-b justify-content-center text-center">
+                        <div class="col-lg-8">
+                            <h3 class="h1 m-15px-b">Job Positions</h3>
+                            <!-- <p class="m-0px font-2">Luper is a HTML5 template based on Sass and Bootstrap 4 with modern and creative multipurpose design you can use it as a startups.</p> -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-4 m-15px-tb">
+                            <div class="media box-shadow-only-hover hover-top border-all-1 border-color-gray p-15px">
+                                <a class="overlay-link" href="#"></a>
+                                <div class="icon-50 theme-bg white-color border-radius-50 d-inline-block">
+                                    <i style="font-size: 0.8em;" class="number">THCE</i>
+                                </div>
+                                <div class="p-20px-l media-body">
+                                    <span
+                                        class="theme2nd-bg white-color p-0px-tb p-10px-lr font-small border-radius-15">Full
+                                        time</span>
+                                    <h6 class="m-5px-tb">Trainee Health Care Executive</h6>
+                                    <p class="m-0px font-small">INDIA,UP</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 m-15px-tb">
+                            <div class="media box-shadow-only-hover hover-top border-all-1 border-color-gray p-15px">
+                                <a class="overlay-link" href="#"></a>
+                                <div class="icon-50 green-bg white-color border-radius-50 d-inline-block">
+                                    <i class="number">HCE</i>
+                                </div>
+                                <div class="p-20px-l media-body">
+                                    <span
+                                        class="theme2nd-bg white-color p-0px-tb p-10px-lr font-small border-radius-15">Full
+                                        time</span>
+                                    <h6 class="m-5px-tb">Health Care Executive</h6>
+                                    <p class="m-0px font-small">INDIA,UP</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 m-15px-tb">
+                            <div class="media box-shadow-only-hover hover-top border-all-1 border-color-gray p-15px">
+                                <a class="overlay-link" href="#"></a>
+                                <div class="icon-50 yellow-bg white-color border-radius-50 d-inline-block">
+                                    <i class="number">BDA</i>
+                                </div>
+                                <div class="p-20px-l media-body">
+                                    <span
+                                        class="theme2nd-bg white-color p-0px-tb p-10px-lr font-small border-radius-15">Full
+                                        time</span>
+                                    <h6 class="m-5px-tb">Business Devlopment Analyst</h6>
+                                    <p class="m-0px font-small">INDIA,UP</p>
+                                </div>
+                            </div>
+                        </div>
+
+            </section>
+
+
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div style="padding: 0%;" col-12>
+                        <form style="background-color: #bab8b8;color: rgb(0, 0, 0);padding: 0.6%;padding-bottom:2%;" target="none">
+                            <div class="row" style="margin-right: 0%;">
+                                <div class="col-6">
+                                    <tittle class="titles">First Name</tittle>
+                                    <input style="width: 100%;" placeholder="First name" name="firstname" width="100%">
+                                </div>
+                                <div class="col-6">
+                                    <tittle class="titles">Last Name</tittle>
+                                    <input style="width: 100%;" placeholder="First name" name="firstname" width="100%">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <tittle class="titles">Phone</tittle>
+                                <input type="number" style="width: 40%;display: block;" placeholder="Phone"
+                                    name="firstname" width="100%">
+                            </div>
+                            <div class="col-6">
+                                <tittle class="titles">Email</tittle>
+                                <input type="email" style="width: 70%;display: block;" placeholder="Email"
+                                    name="firstname" width="100%">
+
+                            </div>
+                            <div>
+                            </div>
+                            <div class="col-6">
+                                <tittle class="titles">Portfolio Website</tittle>
+                                <input style="width: 70%;display: block;" name="firstname" width="100%">
+                            </div>
+                            <div>
+                                <div>
+                                    <tittle class="titles">Role</tittle>
+                                </div>
+                                <select style="width: 20%;">
+                                    <option>Select</option>
+                                    <option>THCE</option>
+                                    <option>HCE</option>
+                                    <option>BDA</option>
+                                </select>
+                                
+                                    <label for="fileInput">
+                                        Upload a File:
+                                    </label>
+                                    <input type="file" id="fileInput">
+                                
+                            </div>
+                            <div style="display: flex;justify-content: center;">
+                                <button type="Submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div style="padding: 0%;" class="container-fluid">
+                    <div style="background-color: #A7E6FF;padding: 1% 0; " class="row">
+                        <h2 style="display: flex;justify-content: center;padding-bottom:2%;font-size: 3em;">Our Company</h1>
+                        <div class="col-md-6">
+                            <div class="col-2"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                    fill="currentColor" class="bi bi-1-circle-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm8.096 10.803L6 6.707v2.768a.5.5 0 0 1-1 0V5.5a.5.5 0 0 1 .5-.5h3.975a.5.5 0 1 1 0 1H6.707l4.096 4.096a.5.5 0 1 1-.707.707" />
+                                </svg></div><h2>Growth and Development Opportunities</h2>
+                            <div class="col-12">We believe in nurturing talent and providing continuous learning opportunities. Our employees are encouraged to pursue professional development through training programs, workshops, and mentorship, ensuring they grow both personally and professionally.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-2"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+                                    fill="currentColor" class="bi bi-1-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+                                </svg>
+                                </svg></div><h3>Collaborative Work Environment</h3>
+                            <div class="col-12">Our success is built on collaboration and teamwork. We foster an inclusive and supportive work culture where diverse perspectives are valued, and innovative ideas are welcomed. Employees work together across departments to achieve common goals and make meaningful contributions.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-2"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                    fill="currentColor" class="bi bi-1-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
+                                </svg></div><h3>Impactful Work</h3>
+                            <div class="col-12">Join us to make a real difference in the world. Our work directly impacts the lives of patients globally, and each team member plays a crucial role in this mission. Experience the fulfillment that comes from knowing your efforts are contributing to improved health outcomes and quality of life.
+
+                                Ready to take the next step in your career? Explore our current job openings and submit your application today!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer style="background-color: #008DDA;padding:0 10px;color: aliceblue;" class="py-5">
+                <div class="row">
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5 style="font-weight: 400;">Info</h5>
+                        <ul style="color: gainsboro;" class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="./index.html" class="nav-link p-0 text-muted">Home</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Services</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Careers</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Enquiry</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Products</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5 style="font-weight: 400;">Resource centre</h5>
+                        <ul style="color: gainsboro;" class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About Estro</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contact</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Corporate
+                                    Enquiries</a></li>
+                            <!-- <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li> -->
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5 style="font-weight: 400;">Policies</h5>
+                        <ul style="color: gainsboro;" class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Term of Services</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Privacy Policy</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                            <!-- <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li> -->
+                        </ul>
+                    </div>
+
+                    <div class="col-md-5 offset-md-1 mb-3">
+                        <form>
+                            <h5 style="font-weight: 600;">Subscribe to our newsletter</h5>
+                            <p>Discover our latest innovations and exclusive offers in our monthly digest.</p>
+                            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                                <label for="newsletter1" class="visually-hidden">Email address</label>
+                                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                                <button class="btn btn-primary" type="button">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 ">
+                    <p>© 2022 EEstro Pharmaceuticals , Inc. All rights reserved.</p>
+                    <ul class="list-unstyled d-flex">
+                        <li class="ms-3"><a class="link-dark" href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="16" height="16" fill="currentColor" class="bi bi-twitter-x"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                                </svg></a></li>
+                        <li class="ms-3"><a class="link-dark" href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="16" height="16" fill="currentColor" class="bi bi-instagram"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                                </svg></a></li>
+                        <li class="ms-3"><a class="link-dark" href="https://www.facebook.com/Estropharma/"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-facebook" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                                </svg></a></li>
+                    </ul>
+                </div>
+            </footer>
+
+            <!-- -----------bootstrap -->
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+                integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+                integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+                crossorigin="anonymous"></script>
+
+            <script src="../js/script.js"></script>
+        </body>
+
+</html>
