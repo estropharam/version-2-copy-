@@ -819,8 +819,8 @@ input::-webkit-inner-spin-button {
 	margin: 0;
 }
 #fmor{
-	background-color: #bab8b8;
-	color: rgb(0, 0, 0);
+	background-color: #01204E;
+	color: rgb(255, 255, 255);
 	padding: 0.6%;
 	padding-bottom:2%;
 }
@@ -1321,12 +1321,7 @@ input::-webkit-inner-spin-button {
 			color: #000000;
 			margin-bottom: 0;
 		}
-		#fmor{
-			background-color: #bab8b8;
-			color: rgb(0, 0, 0);
-			padding: 1.6%;
-			padding-bottom:2%;
-		}
+		
 	}
 
 	/* @media(min-width: 1430px) {
